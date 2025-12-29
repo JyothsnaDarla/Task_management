@@ -4,9 +4,6 @@ A simple yet powerful **Task Management application** built with **Flask, SQLAlc
 It allows users to register, log in, and manage their personal tasks with CRUD functionality, filters, and interactive UI.
 
 ---
-## Demo 
-
-<!-- Failed to upload "Screen Recording 2025-12-29 203446.mp4" -->
 
 ## 🚀 Features
 - 🔐 **User Authentication** (Register, Login, Logout)
