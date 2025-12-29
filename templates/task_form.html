@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h5 class="mb-0">{{ heading }}</h5>
+      </div>
+      <div class="card-body">
+        <form method="post" novalidate>
+          {{ form.csrf_token }}
+          <div class="mb-3">
+            <label class="form-label" for="{{ form.title.id }}">{{ form.title.label }}</label>
+            {{ form.title(class_='form-control', placeholder='E.g., Prepare sprint planning doc') }}
+            {% for error in form.title.errors %}
+              <div class="text-danger small">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="{{ form.description.id }}">{{ form.description.label }}</label>
+            {{ form.description(class_='form-control', rows=4, placeholder='Optional details, acceptance criteria, links...') }}
+            {% for error in form.description.errors %}
+              <div class="text-danger small">{{ error }}</div>
+            {% endfor %}
+          </div>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label" for="{{ form.status.id }}">{{ form.status.label }}</label>
+              {{ form.status(class_='form-select') }}
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="{{ form.priority.id }}">{{ form.priority.label }}</label>
+              {{ form.priority(class_='form-select') }}
+            </div>
+            <div class="col-md-4">
+              <label class="form-label" for="{{ form.due_date.id }}">{{ form.due_date.label }}</label>
+              {{ form.due_date(class_='form-control', placeholder='YYYY-MM-DD') }}
+              {% for error in form.due_date.errors %}
+                <div class="text-danger small">{{ error }}</div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Cancel</a>
+            {{ form.submit(class_="btn btn-primary") }}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
