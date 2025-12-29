@@ -31,7 +31,7 @@ Task_management/
 │   └── styles.css
 
 ---
-Tech Stack
+**Tech Stack**
 Backend: Flask, SQLAlchemy, Flask-Login, WTForms
 
 Frontend: Bootstrap 5, Jinja2 templates
